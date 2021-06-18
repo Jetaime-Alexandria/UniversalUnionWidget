@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+    background-image: url("imgs/background.png");
+    background-size: cover;
+    color: white !important;
+}
+
+li {
+    list-style: none;
+    padding-top: 15px;
+}
+
+img {
+    border-radius: 100%;
+    width: 55px;
+}
+
+a {
+    text-decoration: none !important;
+    color: #7289DA !important;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #4E5D94 !important;
+}
+
+.comp {
+    margin-top: 1rem;
+    background-color: #36393f;
+    padding: 0.5rem;
+    min-height: 25rem;
+    padding-bottom: 3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.welcome {
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.rounded {
+    border-radius: 2rem;
+}
+
+.dropshadow {
+    box-shadow: 10px 10px rgba(1,1,1,0.3);
+}
+
+.OneMargin {
+    margin-top: 1rem;
+}
+
+.TwoMargin {
+    margin-top: 2rem;
+}
+
+.darker {
+    padding-top: 1rem;
+    background-color: #313339;
+    border-color: #31333921;
+    border-style: groove;
+}
+
+.mxo {
+    max-height: 25rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mxoa ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.mxoa ::-webkit-scrollbar-track {
+    background-color: #313339 ;
+}
+
+.mxoa ::-webkit-scrollbar-thumb {
+    background-color: #2b2b2b;
+    border-radius: 1rem;
+}
+
+.mxoa ::-webkit-scrollbar-thumb:hover {
+    background-color: #272727;
+}
+
+.online {
+    color: green;
+    font-size: small;
+}
+
+.idle {
+    color: orange;
+    font-size: small;
+}
+
+.dnd {
+    color: red;
+    font-size: small;
+}
+
+.msinactive {
+    color: dimgray;
+    font-size: small;
+}
+
+.msactivity {
+    color: lightgrey;
+    font-size: small;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<header>
+    <title>Universal Union's Discord</title>
+    <link rel="stylesheet" href="Index.css">
+    <script src="https://kit.fontawesome.com/2c4b435336.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</header>
+
+<body>
+    <div class="container rounded dropshadow comp mxoa">
+        <div class="container welcome">
+            <strong style="font-size: xx-large;">Universal Union Discord</strong><br>
+            Who is online?<br>
+            <div class="container mxo TwoMargin darker">
+                <ol id="nameParent">
+                    <li id="loading"><img src="imgs/Pastel-Blue.png"> Loading...</li>
+                </ol>
+            </div>
+            <div class="OneMargin" style="float: right;">
+                <a onclick="RefreshData()">Refresh</a>
+            </div>
+            <span style="float: left;">Created by Jet</span>
+        </div>
+    </div>
+</body>
+
+<script>
+    let url = 'https://discord.com/api/guilds/811531936496746517/widget.json'
+
+    fetch(url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (obj) {
+        
+        document
+        .getElementById("nameParent")
+        .innerHTML = ""
+        
+        const html = obj.members.map(users => {
+            return `<li><img src="${users.avatar_url}"> ${users.username} <i class="fas fa-circle ${users.status}"></i></li>`
+        })
+        .join('')
+
+
+        document
+        .querySelector("#nameParent")
+        .insertAdjacentHTML("afterbegin", html)
+    })
+    .catch(function (error) {
+        console.error("Something went wrong.")
+        console.error(error);
+    })
+</script>
+
+<script type="text/javascript" src="Index.js"></script>
