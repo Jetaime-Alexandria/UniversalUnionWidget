@@ -15,14 +15,14 @@
             <strong style="font-size: xx-large;">Universal Union Discord</strong><br>
             Who is online?<br>
             <div class="container mxo TwoMargin darker">
-                <ol id="nameParent">
+                <ol id="nameParent" style="text-align: left;">
                     <li id="loading"><img src="imgs/Pastel-Blue.png"> Loading...</li>
                 </ol>
             </div>
             <div class="OneMargin" style="float: right;">
                 <a onclick="RefreshData()">Refresh</a>
             </div>
-            <span style="float: left;">Created by Jet</span>
+            <span style="float: left;">Created by Jet - Version 1.1</span>
         </div>
     </div>
 </body>
@@ -41,10 +41,12 @@
         .innerHTML = ""
         
         const html = obj.members.map(users => {
-            console.log()
-            return `<li><img src="${users.avatar_url}"> ${users.username} <i class="fas fa-circle ${users.status}"></i></li>`
+            return `<li><img src="${users.avatar_url}"> ${users.username} <i class="fas fa-circle ${users.status}"></i> - <i class="fas fa-gamepad"></i> Playing ${users.game?.name}</li>`
         })
         .join('')
+        .replaceAll('- <i class="fas fa-gamepad"></i> Playing undefined', '')
+        .replace('Sir. Sebastian', `Sir. Sebastian <span class="badge bg-primary">Bot</span>`)
+        .replace('SeC Jetaime Alexandria', `SeC Jetaime Alexandria <span class="badge bg-primary">Widget Creator</span>`)
 
         document
         .querySelector("#nameParent")
