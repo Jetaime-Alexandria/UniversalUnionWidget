@@ -20,8 +20,16 @@ function RefreshData() {
         .querySelector("#nameParent")
         .insertAdjacentHTML("afterbegin", html)
     })
-    .catch(function (error) {
-        console.error("Something went wrong.")
-        console.error(error);
+    .catch(function (error) {              
+        document
+        .getElementById('alertcontainer');
+        document
+        .querySelector("#alertcontainer")
+        .insertAdjacentHTML("afterbegin", `
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>A problem occurred.</strong><br>${error}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        `)
     })
 }
